@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORA — Women's Fashion Store</title>
+  <link rel="icon" type="image/jpeg" href=".\image\logo.jpeg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style_2.css" />
+  <!-- <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root { --cream:#f9f5f0; --blush:#e8d5c4; --rose:#c9a89a; --deep:#2c2018; --mid:#6b4f3a; --light:#f2ece4; --white:#ffffff; }
+    body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--deep); }
+    nav { position:fixed; top:0; left:0; right:0; z-index:999; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 5%; background:rgba(249,245,240,0.95); border-bottom:1px solid var(--blush); }
+    .logo { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; letter-spacing:0.3em; color:var(--deep); text-decoration:none; }
+    .page-header { padding:8rem 5% 2.5rem; background:var(--light); border-bottom:1px solid var(--blush); }
+    .page-header span { font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose); }
+    .page-header h1 { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; margin-top:0.4rem; }
+    /* Steps */
+    .steps { display:flex; gap:0; padding:1.5rem 5%; background:var(--white); border-bottom:1px solid var(--blush); }
+    .step { display:flex; align-items:center; gap:0.5rem; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blush); }
+    .step.active { color:var(--deep); }
+    .step.done { color:var(--rose); }
+    .step-num { width:24px; height:24px; border-radius:50%; border:1px solid currentColor; display:flex; align-items:center; justify-content:center; font-size:0.7rem; }
+    .step-divider { width:40px; height:1px; background:var(--blush); margin:0 0.8rem; }
+    /* Layout */
+    .checkout-section { padding:3rem 5%; display:grid; grid-template-columns:1fr 360px; gap:3rem; align-items:start; }
+    /* Form */
+    .checkout-form { background:var(--white); padding:2rem; }
+    .form-section-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; margin-bottom:1.5rem; padding-bottom:0.8rem; border-bottom:1px solid var(--blush); }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+    .form-group { margin-bottom:1rem; }
+    .form-group label { display:block; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); margin-bottom:0.4rem; }
+    .form-group input, .form-group select {
+      width:100%; padding:0.7rem 0.9rem;
+      border:1px solid var(--blush); background:var(--cream);
+      font-family:'DM Sans',sans-serif; font-size:0.9rem; color:var(--deep);
+      outline:none; transition:border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus { border-color:var(--rose); }
+    .section-gap { margin-top:2rem; }
+    .payment-options { display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+    .pay-option { flex:1; min-width:100px; padding:0.7rem; border:1px solid var(--blush); background:transparent; font-family:'DM Sans',sans-serif; font-size:0.8rem; cursor:pointer; color:var(--mid); transition:all 0.2s; text-align:center; }
+    .pay-option.selected { border-color:var(--deep); background:var(--deep); color:var(--cream); }
+    .place-order-btn { display:block; width:100%; padding:1rem; background:var(--deep); color:var(--cream); border:none; font-family:'DM Sans',sans-serif; font-size:0.88rem; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; margin-top:1.5rem; transition:background 0.3s; }
+    .place-order-btn:hover { background:var(--mid); }
+    /* Summary */
+    .order-summary { background:var(--white); padding:2rem; position:sticky; top:100px; }
+    .order-summary h2 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; margin-bottom:1.2rem; padding-bottom:0.8rem; border-bottom:1px solid var(--blush); }
+    .summary-item { display:flex; justify-content:space-between; font-size:0.88rem; color:var(--mid); margin-bottom:0.6rem; }
+    .summary-divider { border:none; border-top:1px solid var(--blush); margin:1rem 0; }
+    .summary-total { display:flex; justify-content:space-between; font-size:1rem; font-weight:500; color:var(--deep); }
+    /* Success */
+    .success-overlay { display:none; position:fixed; inset:0; background:rgba(44,32,24,0.7); z-index:9999; align-items:center; justify-content:center; }
+    .success-overlay.show { display:flex; }
+    .success-box { background:var(--white); padding:3rem 2.5rem; text-align:center; max-width:420px; width:90%; animation:popIn 0.4s ease; }
+    @keyframes popIn { from{transform:scale(0.85);opacity:0} to{transform:scale(1);opacity:1} }
+    .success-icon { font-size:3rem; color:var(--rose); margin-bottom:1rem; }
+    .success-box h2 { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; margin-bottom:0.8rem; }
+    .success-box p { color:var(--mid); font-size:0.92rem; line-height:1.7; margin-bottom:1.5rem; }
+    .success-box a { background:var(--deep); color:var(--cream); padding:0.75rem 2rem; text-decoration:none; font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; display:inline-block; }
+    @media(max-width:800px){ .checkout-section{grid-template-columns:1fr} .form-row{grid-template-columns:1fr} }
+  </style> -->
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="./image/logo.jpeg" alt="AURA Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Back To Home</a></li>
+    </ul>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <div class="page-header">
+    <span>Almost There</span>
+    <h1>Checkout</h1>
+  </div>
+
+  <div class="steps">
+    <div class="step done"><span class="step-num"><i class="fas fa-check" style="font-size:0.6rem"></i></span> Cart
+    </div>
+    <div class="step-divider"></div>
+    <div class="step active"><span class="step-num">2</span> Details</div>
+    <div class="step-divider"></div>
+    <div class="step"><span class="step-num">3</span> Confirm</div>
+  </div>
+
+  <div class="checkout-section">
+    <!-- FORM -->
+    <div class="checkout-form">
+      <p class="form-section-title">Delivery Details</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Priya" /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Sharma" /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="priya@email.com" /></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210" /></div>
+      <div class="form-group"><label>Address</label><input type="text" placeholder="House / Flat No., Street" /></div>
+      <div class="form-row">
+        <div class="form-group"><label>City</label><input type="text" placeholder="Chennai" /></div>
+        <div class="form-group"><label>PIN Code</label><input type="text" placeholder="600001" /></div>
+      </div>
+      <div class="form-group">
+        <label>State</label>
+        <select>
+          <option>Tamil Nadu</option>
+          <option>Maharashtra</option>
+          <option>Karnataka</option>
+          <option>Delhi</option>
+          <option>West Bengal</option>
+          <option>Gujarat</option>
+        </select>
+      </div>
+
+      <div class="section-gap">
+        <p class="form-section-title">Payment Method</p>
+        <div class="payment-options">
+          <button class="pay-option selected" onclick="selectPay(this)">UPI</button>
+          <button class="pay-option" onclick="selectPay(this)">Debit Card</button>
+          <button class="pay-option" onclick="selectPay(this)">Net Banking</button>
+          <button class="pay-option" onclick="selectPay(this)">COD</button>
+        </div>
+        <div class="form-group"><label>UPI ID</label><input type="text" placeholder="yourname@upi" /></div>
+      </div>
+
+      <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="order-summary">
+      <h2>Your Order</h2>
+      <div id="summaryItems"></div>
+      <hr class="summary-divider" />
+      <div class="summary-total"><span>Total</span><span id="summaryTotal">₹0</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER 
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">FLORA</span>
+        <p class="footer-tagline">Fashion for women who move with intention. Timeless, conscious, and unapologetically
+          you.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Summer Edit</a></li>
+          <li><a href="#">Street Style</a></li>
+          <li><a href="#">Minimalist</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FLORA. All rights reserved.</p>
+      <p>Made with ♡ for women who wear their story.</p>
+    </div>
+  </footer>-->
+
+
+  <!-- SUCCESS POPUP -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-box">
+      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+      <h2>Order Placed!</h2>
+      <p>Thank you for shopping with FLORA. Your order has been confirmed and will be delivered in 3–5 business days.
+      </p>
+      <a href="index.html" onclick="clearCart()">Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    function getCart() { return JSON.parse(localStorage.getItem('auraCart')) || []; }
+
+    function renderSummary() {
+      var cart = getCart();
+      var total = 0;
+      var html = '';
+      cart.forEach(function (item) {
+        var t = item.price * item.qty;
+        total += t;
+        html += '<div class="summary-item"><span>' + item.name + ' x' + item.qty + '</span><span>₹' + t.toLocaleString() + '</span></div>';
+      });
+      var shipping = total >= 999 ? 0 : 99;
+      if (shipping > 0) {
+        html += '<div class="summary-item"><span>Shipping</span><span>₹99</span></div>';
+      } else {
+        html += '<div class="summary-item"><span>Shipping</span><span>Free</span></div>';
+      }
+      document.getElementById('summaryItems').innerHTML = html;
+      document.getElementById('summaryTotal').textContent = '₹' + (total + shipping).toLocaleString();
+    }
+
+    function selectPay(btn) {
+      document.querySelectorAll('.pay-option').forEach(function (b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+    }
+
+    function placeOrder() {
+      document.getElementById('successOverlay').classList.add('show');
+    }
+
+    function clearCart() {
+      localStorage.removeItem('auraCart');
+    }
+
+    renderSummary();
+  </script>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

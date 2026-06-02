@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORA — Women's Fashion Store</title>
+  <link rel="icon" type="image/jpeg" href=".\image\logo.jpeg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style_2.css" />
+  <!-- <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --cream:#f9f5f0; --blush:#e8d5c4; --rose:#c9a89a; --deep:#2c2018; --mid:#6b4f3a; --light:#f2ece4; --white:#ffffff; }
+    body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--deep); }
+    nav { position:fixed; top:0; left:0; right:0; z-index:999; display:flex; justify-content:space-between; align-items:center; padding:1.2rem 5%; background:rgba(249,245,240,0.95); border-bottom:1px solid var(--blush); }
+    .logo { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; letter-spacing:0.3em; color:var(--deep); text-decoration:none; }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a { text-decoration:none; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mid); transition:color 0.3s; }
+    .nav-links a:hover,.nav-links a.active { color:var(--deep); }
+    .cart-btn { background:var(--deep); color:var(--cream); border:none; padding:0.6rem 1.2rem; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+    .cart-count { background:var(--rose); color:var(--white); border-radius:50%; width:20px; height:20px; font-size:0.72rem; display:flex; align-items:center; justify-content:center; }
+    .page-header { padding:8rem 5% 2.5rem; background:var(--light); border-bottom:1px solid var(--blush); }
+    .page-header span { font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose); }
+    .page-header h1 { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; margin-top:0.4rem; }
+    .toast { position:fixed; bottom:2rem; right:2rem; z-index:9999; background:var(--deep); color:var(--cream); padding:0.9rem 1.5rem; font-size:0.88rem; transform:translateY(100px); opacity:0; transition:all 0.4s ease; pointer-events:none; }
+    .toast.show { transform:translateY(0); opacity:1; }
+    .filter-bar { padding:1.5rem 5%; display:flex; gap:1rem; flex-wrap:wrap; border-bottom:1px solid var(--blush); background:var(--white); }
+    .filter-btn { padding:0.45rem 1.2rem; border:1px solid var(--blush); background:transparent; font-family:'DM Sans',sans-serif; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--mid); cursor:pointer; transition:all 0.25s; }
+    .filter-btn:hover,.filter-btn.active { background:var(--deep); color:var(--cream); border-color:var(--deep); }
+    .shop-section { padding:3rem 5%; }
+    .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .product-card { background:var(--white); overflow:hidden; transition:transform 0.3s; }
+    .product-card:hover { transform:translateY(-5px); }
+    .product-img { height:280px; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:1.3rem; letter-spacing:0.05em; position:relative; }
+    .product-img .badge { position:absolute; top:12px; left:12px; background:var(--deep); color:var(--cream); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.3rem 0.7rem; }
+    .p1{background:#f0e6d3;color:#c9845a} .p2{background:#e2ddd8;color:#5a5550} .p3{background:#e8e4f0;color:#8a7ab5} .p4{background:#ddeee8;color:#4a8a6c} .p5{background:#f5e8e0;color:#b56a50} .p6{background:#e0e8f0;color:#5a7a9a}
+    .product-body { padding:1rem 1.2rem 1.4rem; }
+    .product-category { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--rose); margin-bottom:0.3rem; }
+    .product-name { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--deep); margin-bottom:0.3rem; }
+    .product-price { font-size:0.95rem; font-weight:500; color:var(--mid); margin-bottom:1rem; }
+    .add-btn { width:100%; padding:0.7rem; background:var(--deep); color:var(--cream); border:none; font-family:'DM Sans',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; transition:background 0.3s; }
+    .add-btn:hover { background:var(--mid); }
+    .add-btn.added { background:var(--rose); }
+    @media(max-width:900px){.products-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:580px){.products-grid{grid-template-columns:1fr}.nav-links{display:none}}
+  </style>
+ -->
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="./image/logo.jpeg" alt="AURA Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <!-- <li><a href="index.html#about">About</a></li> -->
+    </ul>
+    <a href="cart.html" class="cart-btn">
+      <i class="fas fa-shopping-bag"></i> Cart
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <div class="page-header">
+    <span>All Products</span>
+    <h1>Shop the Collection</h1>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+    <button class="filter-btn" onclick="filterProducts('summer',this)">Summer Edit</button>
+    <button class="filter-btn" onclick="filterProducts('festive',this)">Festive Collection</button>
+    <button class="filter-btn" onclick="filterProducts('minimal',this)">Minimalist</button>
+  </div>
+
+  <div class="shop-section">
+    <div class="row g-4" id="productsGrid">
+      <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p1">
+          <span class="badge">New</span>
+          <img src="./image/linen.png" alt="Linen Co-ord Set" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Linen Co-ord Set</h3>
+          <p class="product-price">₹1,499</p>
+          <button class="add-btn" onclick="addToCart(this,'Linen Co-ord Set',1499)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p2">
+          <img src="./image/embroidsaree.png" alt="Embroidered Saree" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Embroidered Saree</h3>
+          <p class="product-price">₹1,199</p>
+          <button class="add-btn" onclick="addToCart(this,'Embroidered Saree',1199)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="minimal">
+        <div class="product-img p3">
+          <span class="badge bg-danger">Popular</span>
+          <img src="./image/ivorysaree.jpeg" alt="Slip Midi Dress" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Minimalist</p>
+          <h3 class="product-name">Ivory Cotton Saree</h3>
+          <p class="product-price">₹1,899</p>
+          <button class="add-btn" onclick="addToCart(this,'Ivory Cotton Saree',1899)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p4">
+          <img src="./image/cottonkurti.png" alt="Breezy Floral Top" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Cotton Kurti</h3>
+          <p class="product-price">₹799</p>
+          <button class="add-btn" onclick="addToCart(this,'Cotton Kurti',799)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p5">
+          <span class="badge">New</span>
+          <img src="./image/lehenga.png" alt="Festive Lehenga" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Festive Lehengas</h3>
+          <p class="product-price">₹1,349</p>
+          <button class="add-btn" onclick="addToCart(this,'Festive Lehengas',1349)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="minimal">
+        <div class="product-img p6">
+          <img src="./image/salwar.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Minimalist</p>
+          <h3 class="product-name">Salwar Suit</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Salwar Suit',999)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="minimal">
+        <div class="product-img p7">
+          <img src="./image/pearllinensaree.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Minimalist</p>
+          <h3 class="product-name">Pearl Linen Saree</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Pearl Linen Saree',999)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p8">
+          <img src="./image/chikankari.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Chikankari Kurti</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Chikankari Kurti',999)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p9">
+          <img src="./image/royalzari.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Royal Zari Saree</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Royal Zari Saree',999)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">FLORA</span>
+        <p class="footer-tagline">Fashion for women who move with intention. Timeless, conscious, and unapologetically
+          you.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Summer Edit</a></li>
+          <li><a href="#">Street Style</a></li>
+          <li><a href="#">Minimalist</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FLORA. All rights reserved.</p>
+      <p>Made with ♡ for women who wear their story.</p>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap Toast -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Item added to cart ✓
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateCartCount() {
+      var cart = JSON.parse(localStorage.getItem('auraCart')) || [];
+      var total = cart.reduce(function (sum, item) { return sum + item.qty; }, 0);
+      document.getElementById('cartCount').textContent = total;
+    }
+    updateCartCount();
+
+    function addToCart(btn, name, price) {
+      var cart = JSON.parse(localStorage.getItem('auraCart')) || [];
+      var found = false;
+      for (var i = 0; i < cart.length; i++) {
+        if (cart[i].name === name) { cart[i].qty += 1; found = true; break; }
+      }
+      if (!found) { cart.push({ name: name, price: price, qty: 1 }); }
+      localStorage.setItem('auraCart', JSON.stringify(cart));
+      updateCartCount();
+      btn.textContent = 'Added ✓';
+      btn.classList.add('added');
+      setTimeout(function () { btn.textContent = 'Add to Cart'; btn.classList.remove('added'); }, 1500);
+
+      const toastLiveExample = document.getElementById('liveToast');
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+      toastBootstrap.show();
+    }
+
+    function filterProducts(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.product-card').forEach(function (card) {
+        card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
