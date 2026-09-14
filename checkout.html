@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORA — Women's Fashion Store</title>
+  <link rel="icon" type="image/jpeg" href=".\image\logo.jpeg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="FLORA_style_2_clean.css" />
+ 
+    
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="./image/logo.jpeg" alt="AURA Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Back To Home</a></li>
+    </ul>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <div class="page-header">
+    <span>Almost There</span>
+    <h1>Checkout</h1>
+  </div>
+
+  <div class="steps">
+    <div class="step done"><span class="step-num"><i class="fas fa-check" style="font-size:0.6rem"></i></span> Cart
+    </div>
+    <div class="step-divider"></div>
+    <div class="step active"><span class="step-num">2</span> Details</div>
+    <div class="step-divider"></div>
+    <div class="step"><span class="step-num">3</span> Confirm</div>
+  </div>
+
+  <div class="checkout-section">
+    <!-- FORM -->
+    <div class="checkout-form">
+      <p class="form-section-title">Delivery Details</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Priya" /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Sharma" /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="priya@email.com" /></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210" /></div>
+      <div class="form-group"><label>Address</label><input type="text" placeholder="House / Flat No., Street" /></div>
+      <div class="form-row">
+        <div class="form-group"><label>City</label><input type="text" placeholder="Chennai" /></div>
+        <div class="form-group"><label>PIN Code</label><input type="text" placeholder="600001" /></div>
+      </div>
+      <div class="form-group">
+        <label>State</label>
+        <select>
+          <option>Tamil Nadu</option>
+          <option>Maharashtra</option>
+          <option>Karnataka</option>
+          <option>Delhi</option>
+          <option>West Bengal</option>
+          <option>Gujarat</option>
+        </select>
+      </div>
+
+      <div class="section-gap">
+        <p class="form-section-title">Payment Method</p>
+        <div class="payment-options">
+          <button class="pay-option selected" onclick="selectPay(this)">UPI</button>
+          <button class="pay-option" onclick="selectPay(this)">Debit Card</button>
+          <button class="pay-option" onclick="selectPay(this)">Net Banking</button>
+          <button class="pay-option" onclick="selectPay(this)">COD</button>
+        </div>
+        <div class="form-group"><label>UPI ID</label><input type="text" placeholder="yourname@upi" /></div>
+      </div>
+
+      <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="order-summary">
+      <h2>Your Order</h2>
+      <div id="summaryItems"></div>
+      <hr class="summary-divider" />
+      <div class="summary-total"><span>Total</span><span id="summaryTotal">₹0</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER 
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">FLORA</span>
+        <p class="footer-tagline">Fashion for women who move with intention. Timeless, conscious, and unapologetically
+          you.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Summer Edit</a></li>
+          <li><a href="#">Street Style</a></li>
+          <li><a href="#">Minimalist</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FLORA. All rights reserved.</p>
+      <p>Made with ♡ for women who wear their story.</p>
+    </div>
+  </footer>-->
+
+
+  <!-- SUCCESS POPUP -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-box">
+      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+      <h2>Order Placed!</h2>
+      <p>Thank you for shopping with FLORA. Your order has been confirmed and will be delivered in 3–5 business days.
+      </p>
+      <a href="index.html" onclick="clearCart()">Back to Home</a>
+    </div>
+  </div>
+
+  <script>
+    function getCart() { return JSON.parse(localStorage.getItem('auraCart')) || []; }
+
+    function renderSummary() {
+      var cart = getCart();
+      var total = 0;
+      var html = '';
+      cart.forEach(function (item) {
+        var t = item.price * item.qty;
+        total += t;
+        html += '<div class="summary-item"><span>' + item.name + ' x' + item.qty + '</span><span>₹' + t.toLocaleString() + '</span></div>';
+      });
+      var shipping = total >= 999 ? 0 : 99;
+      if (shipping > 0) {
+        html += '<div class="summary-item"><span>Shipping</span><span>₹99</span></div>';
+      } else {
+        html += '<div class="summary-item"><span>Shipping</span><span>Free</span></div>';
+      }
+      document.getElementById('summaryItems').innerHTML = html;
+      document.getElementById('summaryTotal').textContent = '₹' + (total + shipping).toLocaleString();
+    }
+
+    function selectPay(btn) {
+      document.querySelectorAll('.pay-option').forEach(function (b) { b.classList.remove('selected'); });
+      btn.classList.add('selected');
+    }
+
+    function placeOrder() {
+      document.getElementById('successOverlay').classList.add('show');
+    }
+
+    function clearCart() {
+      localStorage.removeItem('auraCart');
+    }
+
+    renderSummary();
+  </script>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORA — Women's Fashion Store</title>
+  <link rel="icon" type="image/jpeg" href=".\image\logo.jpeg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="FLORA_style_2_clean.css" />
+  
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="./image/logo.jpeg" alt="AURA Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <!-- <li><a href="index.html#about">About</a></li> -->
+    </ul>
+    <a href="cart.html" class="cart-btn">
+      <i class="fas fa-shopping-bag"></i> 
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <div class="page-header">
+    <span>All Products</span>
+    <h1>Shop the Collection</h1>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+    <button class="filter-btn" onclick="filterProducts('summer',this)">Summer Edit</button>
+    <button class="filter-btn" onclick="filterProducts('festive',this)">Festive Collection</button>
+    <button class="filter-btn" onclick="filterProducts('minimal',this)">Minimalist</button>
+  </div>
+
+  <div class="shop-section">
+    <div class="row g-4" id="productsGrid">
+      <div class="col-sm-3 col-md-4 product-card" data-category="summer">
+        <div class="product-img p1">
+          <span class="badge">New</span>
+          <img src="./image/coord.jpeg" alt="Linen Co-ord Set" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Linen Co-ord Set</h3>
+          <p class="product-price">₹1,499</p>
+          <button class="add-btn" onclick="addToCart(this,'Linen Co-ord Set',1499,'./image/linen.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+          <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p1">
+          <span class="badge">New</span>
+          <img src="./image/cottonsaree.jpeg" alt="Linen Co-ord Set" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Cotton Saree</h3>
+          <p class="product-price">₹1,499</p>
+          <button class="add-btn" onclick="addToCart(this,'Cotton Saree',1499,'./image/cottonsaree.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+          <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p1">
+          <span class="badge">New</span>
+          <img src="./image/floralmaxi.jpeg" alt="Linen Co-ord Set" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Floral Maxi Dress</h3>
+          <p class="product-price">₹1,499</p>
+          <button class="add-btn" onclick="addToCart(this,'Floral Maxi Dress',1499,'./image/floralmaxi.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+          <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p1">
+          <span class="badge">New</span>
+          <img src="./image/floral.jpeg" alt="Linen Co-ord Set" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Floral Printed Maxi</h3>
+          <p class="product-price">₹1,499</p>
+          <button class="add-btn" onclick="addToCart(this,'Floral Printed Maxi',1499,'./image/floral.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p2">
+          <img src="./image/silksaree.jpeg" alt="Embroidered Saree" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Embroidered Saree</h3>
+          <p class="product-price">₹1,199</p>
+          <button class="add-btn" onclick="addToCart(this,'Embroidered Saree',1199,'./image/silksaree.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="minimal">
+        <div class="product-img p3">
+          <span class="badge bg-danger">Popular</span>
+          <img src="./image/ivorysaree.jpeg" alt="Slip Midi Dress" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Minimalist</p>
+          <h3 class="product-name">Ivory Cotton Saree</h3>
+          <p class="product-price">₹1,899</p>
+          <button class="add-btn" onclick="addToCart(this,'Ivory Cotton Saree',1899,'./image/ivorysaree.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="minimal">
+        <div class="product-img p3">
+          <span class="badge bg-danger">Popular</span>
+          <img src="./image/salwar2.jpeg" alt="Slip Midi Dress" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Minimalist</p>
+          <h3 class="product-name">Ivory Cotton Saree</h3>
+          <p class="product-price">₹1,899</p>
+          <button class="add-btn" onclick="addToCart(this,'Ivory Cotton Saree',1899,'./image/ivorysaree.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p4">
+          <img src="./image/cottonkurti.jpeg" alt="Breezy Floral Top" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Cotton Kurti</h3>
+          <p class="product-price">₹799</p>
+          <button class="add-btn" onclick="addToCart(this,'Cotton Kurti',799,'./image/cottonkurti.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p5">
+          <span class="badge">New</span>
+          <img src="./image/halfsaree.jpeg" alt="Festive Lehenga" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Festive Lehengas</h3>
+          <p class="product-price">₹1,349</p>
+          <button class="add-btn" onclick="addToCart(this,'Festive Lehengas',1349,'./image/halfsaree.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p5">
+          <span class="badge">New</span>
+          <img src="./image/anarkali2.jpeg" alt="Festive Lehenga" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Festive Lehengas</h3>
+          <p class="product-price">₹1,349</p>
+          <button class="add-btn" onclick="addToCart(this,'Festive Lehengas',1349,'./image/anarkali2.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p5">
+          <span class="badge">New</span>
+          <img src="./image/tissuesilk.jpeg" alt="Festive Lehenga" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Festive Lehengas</h3>
+          <p class="product-price">₹1,349</p>
+          <button class="add-btn" onclick="addToCart(this,'Festive Lehengas',1349,'./image/tissuesilk.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="minimal">
+        <div class="product-img p6">
+          <img src="./image/salwar.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Minimalist</p>
+          <h3 class="product-name">Salwar Suit</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Salwar Suit',999,'./image/salwar.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="minimal">
+        <div class="product-img p7">
+          <img src="./image/pearllinensaree.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Minimalist</p>
+          <h3 class="product-name">Pearl Linen Saree</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Pearl Linen Saree',999,'./image/pearllinensaree.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 product-card" data-category="summer">
+        <div class="product-img p8">
+          <img src="./image/chikankari.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Summer Edit</p>
+          <h3 class="product-name">Chikankari Kurti</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Chikankari Kurti',999,'./image/chikankari.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+      
+      <div class="col-sm-6 col-md-4 product-card" data-category="festive">
+        <div class="product-img p9">
+          <img src="./image/anarkali.jpeg" alt="Classic White Shirt" class="product-photo">
+        </div>
+        <div class="product-body">
+          <p class="product-category">Festive Collection</p>
+          <h3 class="product-name">Royal Zari Saree</h3>
+          <p class="product-price">₹999</p>
+          <button class="add-btn" onclick="addToCart(this,'Royal Zari Saree',999,'./image/anarkali.jpeg')">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">FLORA</span>
+        <p class="footer-tagline">Fashion for women who move with intention. Timeless, conscious, and unapologetically
+          you.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Summer Edit</a></li>
+          <li><a href="#">Street Style</a></li>
+          <li><a href="#">Minimalist</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FLORA. All rights reserved.</p>
+      <p>Made with ♡ for women who wear their story.</p>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap Toast -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Item added to cart ✓
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateCartCount() {
+      var cart = JSON.parse(localStorage.getItem('auraCart')) || [];
+      var total = cart.reduce(function (sum, item) { return sum + item.qty; }, 0);
+      document.getElementById('cartCount').textContent = total;
+    }
+    updateCartCount();
+
+    function addToCart(btn, name, price,img) {
+      var cart = JSON.parse(localStorage.getItem('auraCart')) || [];
+      var found = false;
+      for (var i = 0; i < cart.length; i++) {
+        if (cart[i].name === name) { cart[i].qty += 1; found = true; break; }
+      }
+      if (!found) { cart.push({ name: name, price: price, qty: 1,img: img }); }
+      localStorage.setItem('auraCart', JSON.stringify(cart));
+      updateCartCount();
+      btn.textContent = 'Added ✓';
+      btn.classList.add('added');
+      setTimeout(function () { btn.textContent = 'Add to Cart'; btn.classList.remove('added'); }, 1500);
+
+      const toastLiveExample = document.getElementById('liveToast');
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+      toastBootstrap.show();
+    }
+
+    function filterProducts(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.product-card').forEach(function (card) {
+        card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
+      });
+    }
+  </script>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

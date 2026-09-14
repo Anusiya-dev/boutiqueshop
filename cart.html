@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORA — Women's Fashion Store</title>
+  <link rel="icon" type="image/jpeg" href=".\image\logo.jpeg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="FLORA_style_2_clean.css" />
+  
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="./image/logo.jpeg" alt="AURA Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <!-- <li><a href="index.html#about">About</a></li> -->
+    </ul>
+    <a href="cart.html" class="cart-btn">
+      <i class="fas fa-shopping-bag"></i> 
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <div class="page-header">
+    <span>Your Selections</span>
+    <h1>Shopping Cart</h1>
+  </div>
+
+  <div class="cart-section">
+    <div class="cart-items" id="cartItems"></div>
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="summary-row"><span>Shipping</span><span id="shipping">Free</span></div>
+      <div class="summary-row total"><span>Total</span><span id="totalAmt">₹0</span></div>
+      <a href="checkout.html" class="checkout-btn" id="checkoutBtn">Proceed to Checkout</a>
+      <a href="shop.html" class="continue-link">← Continue Shopping</a>
+    </div>
+  </div>
+
+  <!-- FOOTER
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">FLORA</span>
+        <p class="footer-tagline">Fashion for women who move with intention. Timeless, conscious, and unapologetically
+          you.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Summer Edit</a></li>
+          <li><a href="#">Street Style</a></li>
+          <li><a href="#">Minimalist</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FLORA. All rights reserved.</p>
+      <p>Made with ♡ for women who wear their story.</p>
+    </div>
+  </footer>-->
+
+
+  <script>
+    function getCart() { return JSON.parse(localStorage.getItem('auraCart')) || []; }
+    function saveCart(cart) { localStorage.setItem('auraCart', JSON.stringify(cart)); }
+
+    function renderCart() {
+      var cart = getCart();
+      var container = document.getElementById('cartItems');
+      var total = 0;
+
+      // Update nav count 
+      var count = cart.reduce(function (s, i) { return s + i.qty; }, 0);
+      document.getElementById('cartCount').textContent = count;
+
+      if (cart.length === 0) {
+        container.innerHTML = '<div class="empty-cart"><i class="fas fa-shopping-bag"></i><p>Your cart is empty.</p><a href="shop.html">Shop Now</a></div>';
+        document.getElementById('subtotal').textContent = '₹0';
+        document.getElementById('totalAmt').textContent = '₹0';
+        document.getElementById('checkoutBtn').style.opacity = '0.5';
+        document.getElementById('checkoutBtn').style.pointerEvents = 'none';
+        return;
+      }
+
+      var html = '';
+      cart.forEach(function (item, index) {
+        var itemTotal = item.price * item.qty;
+        total += itemTotal;
+        html += '<div class="cart-item">' +
+        '<div class="item-img">' + (item.img 
+        ? '<img src="' + item.img + '" alt="' + item.name + '" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">' 
+        : '<i class="fas fa-shirt" style="font-size:2rem;color:var(--rose);"></i>') +
+         '</div>' +
+          '<div class="item-info">' +
+          '<p class="item-name">' + item.name + '</p>' +
+          '<p class="item-price">₹' + item.price.toLocaleString() + ' each</p>' +
+          '</div>' +
+          '<div class="item-controls">' +
+          '<button class="qty-btn" onclick="changeQty(' + index + ',-1)">−</button>' +
+          '<span class="qty-num">' + item.qty + '</span>' +
+          '<button class="qty-btn" onclick="changeQty(' + index + ',1)">+</button>' +
+          '</div>' +
+          '<span class="item-total">₹' + itemTotal.toLocaleString() + '</span>' +
+          '<button class="remove-btn" onclick="removeItem(' + index + ')"><i class="fas fa-times"></i></button>' +
+          '</div>';
+      });
+      container.innerHTML = html;
+
+      var shipping = total >= 999 ? 'Free' : '₹99';
+      var finalTotal = total >= 999 ? total : total + 99;
+      document.getElementById('subtotal').textContent = '₹' + total.toLocaleString();
+      document.getElementById('shipping').textContent = shipping;
+      document.getElementById('totalAmt').textContent = '₹' + finalTotal.toLocaleString();
+    }
+
+    function changeQty(index, change) {
+      var cart = getCart();
+      cart[index].qty += change;
+      if (cart[index].qty <= 0) { cart.splice(index, 1); }
+      saveCart(cart);
+      renderCart();
+    }
+
+    function removeItem(index) {
+      var cart = getCart();
+      cart.splice(index, 1);
+      saveCart(cart);
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

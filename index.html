@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLORA — Women's Fashion Store</title>
+  <link rel="icon" type="image/jpeg" href=".\image\logo.jpeg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="FLORA_style_2_clean.css" />
+  
+
+  
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="./image/logo.jpeg" alt="FLORA Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+    </ul>
+    <a href="cart.html" class="cart-btn">
+      <i class="fas fa-shopping-bag"></i> 
+      <span class="cart-count" id="cartCount">0</span></a>
+    <button class="hamburger"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-tag">New Collection — Summer 2025</span>
+      <h1 class="hero-title">Wear Your<br><em>Story.</em></h1>
+      <p class="hero-desc">
+        Curated fashion for women who move with intention. Every piece is crafted to feel as good as it looks —
+        timeless, conscious, and unapologetically you.
+      </p>
+      <div class="d-flex flex-wrap gap-3 mt-4">
+        <a href="#collections" class="btn-primary">Explore Collections</a>
+        <a href="#about" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-image-box">
+      <img src="./image/indian_boutique.png" alt="Indian Boutique Collection">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-img-box">
+      <img src="./image/boutique_about.png" alt="FLORA Boutique" class="about-img">
+    </div>
+    <div class="about-text">
+      <p class="section-tag">About the Brand</p>
+      <h2 class="section-title">Fashion that<br>feels like you.</h2>
+      <p>
+        FLORA was born from a simple belief — that what you wear should tell your story, not someone else's. We design
+        for real women: thoughtful, layered, and full of life.
+      </p>
+      <p>
+        Each collection is built around sustainable practices, quality fabrics, and a quiet confidence that never goes
+        out of style.
+      </p>
+      <div class="about-stats">
+        <div>
+          <span class="stat-num">3K+</span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div>
+          <span class="stat-num">48</span>
+          <span class="stat-label">Curated Pieces</span>
+        </div>
+        <div>
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Sustainable Fabrics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section id="collections">
+    <div class="collections-header">
+      <div>
+        <p class="section-tag">This Season</p>
+        <h2 class="section-title">Our Collections</h2>
+      </div>
+      <a href="shop.html" class="btn-outline">View All</a>
+    </div>
+    <div class="row g-4 mt-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-img summer">
+            <img src="./image/summer.jpeg" alt="Summer Edit Collection" class="collection-img">
+          </div>
+          <div class="card-body">
+            <p class="card-tag">New Drop</p>
+            <h3 class="card-title">Summer Edit</h3>
+            <p class="card-desc">Light linens and breezy silhouettes for days that glow. Earthy tones, easy movement.
+            </p>
+            <a href="shop.html" class="card-link">Explore →</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-img street">
+            <img src="./image/festive.jpeg." alt="Festive Collection" class="collection-img">
+          </div>
+          <div class="card-body">
+            <p class="card-tag">Best Seller</p>
+            <h3 class="card-title">Festive Collection</h3>
+            <p class="card-desc">Curated for unforgettable moments, our festive collection blends tradition with modern
+              elegance.
+            </p>
+            <a href="shop.html" class="card-link">Explore →</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-img minimal">
+            <img src="./image/minimalist.jpeg" alt="Minimalist Collection" class="collection-img">
+          </div>
+          <div class="card-body">
+            <p class="card-tag">Signature</p>
+            <h3 class="card-title">Minimalist</h3>
+            <p class="card-desc">Clean cuts, soft palettes, and timeless shapes for the woman who lets less say more.
+            </p>
+            <a href="shop.html" class="card-link">Explore →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <p class="section-tag">Why FLORA</p>
+    <h2 class="section-title">Designed with intention.</h2>
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="why-card h-100">
+          <div class="why-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Sustainable Always</h3>
+          <p>Every fabric we use is ethically sourced. Fashion doesn't have to cost the earth — we prove it with every
+            stitch.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="why-card h-100">
+          <div class="why-icon"><i class="fas fa-truck"></i></div>
+          <h3>Free Shipping</h3>
+          <p>On all orders above ₹999. Fast, tracked, and delivered to your door with zero fuss.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="why-card h-100">
+          <div class="why-icon"><i class="fas fa-sync-alt"></i></div>
+          <h3>New Drops Weekly</h3>
+          <p>Fresh styles every week. Follow along and never miss the piece that was made for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <p class="section-tag">Real Stories</p>
+    <h2 class="section-title">Loved by women everywhere.</h2>
+    <div class="row g-4 mt-4">
+      <div class="col-md-4">
+        <div class="testi-card h-100">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"I wore the Summer Edit linen set to a wedding and got more compliments than the bride.
+            Worth every rupee."</p>
+          <span class="testi-author">— Meera K., Bangalore</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testi-card h-100">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"FLORA gets minimalism right. The quality feels expensive but the prices don't. My new
+            everyday brand."</p>
+          <span class="testi-author">— Priya R., Mumbai</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testi-card h-100">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Sustainable fashion that actually looks good? Finally. The Street Style hoodie hasn't
+            left my rotation."</p>
+          <span class="testi-author">— Ananya S., Delhi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter">
+    <p class="section-tag">Stay Connected</p>
+    <h2 class="section-title">New drops. First to know.</h2>
+    <p class="newsletter-sub">Join the FLORA community — exclusive offers, style tips, and early access.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Your email address" />
+      <button type="button">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">FLORA</span>
+        <p class="footer-tagline">Fashion for women who move with intention. Timeless, conscious, and unapologetically
+          you.</p>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Summer Edit</a></li>
+          <li><a href="#">Street Style</a></li>
+          <li><a href="#">Minimalist</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FLORA. All rights reserved.</p>
+      <p>Made with ♡ for women who wear their story.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+
+
+    function updateCartCount() {
+      let cart = JSON.parse(localStorage.getItem('auraCart')) || [];
+
+      let total = cart.reduce((sum, item) => {
+        return sum + item.qty;
+      }, 0);
+
+      document.getElementById('cartCount').textContent = total;
+    }
+
+    updateCartCount();
+  </script>
+
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
