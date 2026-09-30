@@ -1,9 +1,7 @@
-/* ============================================
-   AURA — External Stylesheet
-   Used by: index.html, shop.html, cart.html, checkout.html
-   ============================================ */
+/* =========================================================
+   RESET & ROOT
+   ========================================================= */
 
-/* ── RESET & ROOT ── */
 *,
 *::before,
 *::after {
@@ -27,159 +25,222 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   background-color: var(--cream);
   color: var(--deep);
   overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+}
 
-/* ============================================
-   NAVBAR  (shared across all pages)
-   ============================================ */
+::selection {
+  background: var(--blush);
+  color: var(--deep);
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
-  padding: 1.2rem 5%;
-  background: rgba(249, 245, 240, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--blush);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    height: 86px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    background: rgba(249, 245, 240, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--blush);
 }
 
 .logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  margin-right: auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    margin-right: auto;
 }
 
 .logo img {
-  height: 100px;
-  width: auto;
-  display: inline;
-  border-radius: 50px;
+    height: 75px;
+    width: auto;
+    border-radius: 50px;
+    display: block;
+    object-fit: contain;
 }
 
 .nav-links {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
-  text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mid);
-  transition: color 0.3s;
+    text-decoration: none;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: var(--mid);
+
+    transition: color 0.3s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--deep);
-  border-bottom: 1px solid var(--rose);
+    color: var(--deep);
+    border-bottom: 1px solid var(--rose);
 }
 
-/* Cart button in navbar */
 .cart-btn {
-  background: var(--deep);
-  color: var(--cream);
-  border: none;
-  padding: 0.6rem 1.2rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background 0.3s;
+    background: var(--deep);
+    color: var(--cream);
+
+    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left:10px;
+    transition: background 0.3s;
 }
 
 .cart-btn:hover {
-  background: var(--mid);
+    background: var(--mid);
 }
 
 .cart-count {
-  background: var(--rose);
-  color: var(--white);
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 0.72rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: var(--rose);
+    color: var(--white);
+
+    border-radius: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    font-size: 0.72rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Old nav-btn style (used in index.html) */
 .nav-btn {
-  background: var(--deep);
-  color: var(--cream);
-  border: none;
-  padding: 0.6rem 1.5rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.3s;
-  text-decoration: none;
-  display: inline-block;
+    background: var(--deep);
+    color: var(--cream);
+
+    border: none;
+    padding: 0.6rem 1.5rem;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: background 0.3s;
+
+    text-decoration: none;
+    display: inline-block;
 }
 
 .nav-btn:hover {
-  background: var(--mid);
+    background: var(--mid);
 }
 
 .hamburger {
-  display: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: var(--deep);
-  background: none;
-  border: none;
+    display: none;
+
+    font-size: 1.4rem;
+    cursor: pointer;
+
+    color: var(--deep);
+
+    background: none;
+    border: none;
 }
 
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
 
-/* ============================================
-   PAGE HEADER  (shop, cart, checkout)
-   ============================================ */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 0;
+  height: 1px;
+  background: var(--rose);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
+}
+
+/* =========================================================
+   COMMON STYLES
+   ========================================================= */
+
 .page-header {
-  padding: 8rem 5% 2.5rem;
+  padding: 70px 20px 40px;
   background: var(--light);
   border-bottom: 1px solid var(--blush);
   margin-top: 35px;
+  text-align: center;
 }
 
 .page-header span {
   font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--rose);
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  margin-bottom: 1.5rem;
 }
 
 .page-header h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem;
-  font-weight: 300;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 400;
   margin-top: 0.4rem;
+  color: var(--deep);
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-
-/* ============================================
-   SHARED SECTION STYLES
-   ============================================ */
 section {
   padding: 5rem 5%;
 }
@@ -193,15 +254,15 @@ section {
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 300;
   color: var(--deep);
   margin-bottom: 1rem;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
-/* Shared buttons */
 .btn-primary {
   background: var(--deep);
   color: var(--cream);
@@ -235,10 +296,18 @@ section {
   color: var(--cream);
 }
 
+.btn {
+  transition: all 0.3s ease;
+}
 
-/* ============================================
-   INDEX — HERO
-   ============================================ */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   HOME - HERO
+   ========================================================= */
+
 #hero {
   min-height: 100vh;
   display: flex;
@@ -246,10 +315,35 @@ section {
   justify-content: space-between;
   gap: 4rem;
   padding: 6rem 5% 4rem;
-  background: linear-gradient(135deg, var(--cream) 50%, var(--light) 100%);
+  background: radial-gradient(circle at 90% 15%,
+        rgba(201, 168, 154, 0.20),
+        transparent 28%),
+        linear-gradient(135deg, var(--cream), var(--light));
   position: relative;
   overflow: hidden;
   margin-top: 50px;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(201, 168, 154, 0.35);
+  border-radius: 50%;
+  right: -150px;
+  top: 80px;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(201, 168, 154, 0.25);
+  border-radius: 50%;
+  right: 100px;
+  bottom: -70px;
 }
 
 .hero-content {
@@ -259,23 +353,13 @@ section {
   animation: fadeUp 1s ease forwards;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .hero-image-box {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   animation: fadeUp 1.2s ease forwards;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .hero-image-box img {
@@ -284,6 +368,7 @@ section {
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(44, 32, 24, 0.08);
+  transition: transform 0.7s ease;
 }
 
 .hero-tag {
@@ -291,13 +376,12 @@ section {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #cc5c2c;
-  ;
   margin-bottom: 1.2rem;
   display: block;
 }
 
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 300;
   line-height: 1.1;
@@ -324,16 +408,41 @@ section {
   flex-wrap: wrap;
 }
 
+.hero-content,
+.hero-image-box {
+  position: relative;
+  z-index: 1;
+}
 
-/* ============================================
-   INDEX — ABOUT
-   ============================================ */
+.hero-image-box:hover img {
+  transform: scale(1.03);
+}
+
+.hero-content .btn-primary,
+.hero-content .btn-outline {
+  transition: all 0.3s ease;
+}
+
+.hero-content .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(44, 32, 24, 0.15);
+}
+
+.hero-content .btn-outline:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   HOME - ABOUT
+   ========================================================= */
+
 #about {
   background: var(--white);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
 }
 
 .about-img-box {
@@ -346,17 +455,6 @@ section {
   overflow: hidden;
 }
 
-/* .about-img-box::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 180px;
-  height: 180px;
-  border: 2px solid var(--blush);
-  z-index: 0;
-} */
-
 .about-img {
   width: 100%;
   height: 100%;
@@ -365,14 +463,8 @@ section {
   display: block;
   position: relative;
   z-index: 1;
+  transition: transform 0.6s ease;
 }
-
-/* .about-img-placeholder {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 5rem;
-  color: var(--blush);
-  letter-spacing: 0.1em;
-} */
 
 .about-text p {
   color: var(--mid);
@@ -381,33 +473,57 @@ section {
   margin-bottom: 1.2rem;
 }
 
+.about-text {
+  padding-left: 20px;
+}
+
+.about-text > p:not(.section-tag) {
+  line-height: 1.8;
+  color: var(--mid);
+}
+
 .about-stats {
   display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-  padding-top: 2rem;
+  gap: 30px;
+  margin-top: 35px;
+  padding-top: 25px;
   border-top: 1px solid var(--blush);
 }
 
+.about-stats > div {
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.about-stats > div:hover {
+  transform: translateY(-5px);
+}
+
 .stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 300;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.3rem;
+  font-weight: 600;
   color: var(--deep);
   display: block;
 }
 
 .stat-label {
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #cc8060;
+  color: var(--mid);
+  display: block;
+  margin-top: 4px;
 }
 
+.about-img-box:hover .about-img {
+  transform: scale(1.04);
+}
 
-/* ============================================
-   INDEX — COLLECTIONS
-   ============================================ */
+/* =========================================================
+   HOME - COLLECTIONS
+   ========================================================= */
+
 #collections {
   background: var(--cream);
 }
@@ -442,7 +558,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 3rem;
   letter-spacing: 0.05em;
   position: relative;
@@ -485,7 +601,7 @@ section {
 }
 
 .card-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--deep);
@@ -515,14 +631,90 @@ section {
   color: #cc8060;
 }
 
+#collections .card {
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--white);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-/* ============================================
-   INDEX — WHY US
-   ============================================ */
+#collections .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(44, 32, 24, 0.12) !important;
+}
+
+#collections .card-img {
+  height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+#collections .collection-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+#collections .card:hover .collection-img {
+  transform: scale(1.06);
+}
+
+#collections .card-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+        to top,
+        rgba(44, 32, 24, 0.15),
+        transparent 45%
+    );
+  pointer-events: none;
+}
+
+#collections .card-body {
+  padding: 28px 26px 30px;
+}
+
+#collections .card-tag {
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+#collections .card-title {
+  margin-bottom: 10px;
+}
+
+#collections .card-desc {
+  line-height: 1.7;
+}
+
+#collections .card-link {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  color: var(--deep);
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+#collections .card-link:hover {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   HOME - WHY FLORA
+   ========================================================= */
+
 #why {
   background: var(--deep);
   color: var(--cream);
   text-align: center;
+  position: relative;
 }
 
 #why .section-title {
@@ -541,42 +733,63 @@ section {
 }
 
 .why-card {
-  padding: 2.5rem 2rem;
-  border: 1px solid rgba(201, 168, 154, 0.3);
-  transition: border-color 0.3s;
+  padding: 40px 30px;
+  border: 1px solid rgba(201, 168, 154, 0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: var(--white);
+  border-radius: 4px;
+  text-align: center;
 }
 
 .why-card:hover {
   border-color: var(--rose);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(44, 32, 24, 0.10);
 }
 
 .why-icon {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: var(--rose);
   margin-bottom: 1.2rem;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--light);
+  transition: all 0.4s ease;
 }
 
 .why-card h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.3rem;
   font-weight: 400;
-  margin-bottom: 0.8rem;
-  color: var(--cream);
+  margin-bottom: 12px;
+  color: rgb(192, 79, 23);
 }
 
 .why-card p {
   font-size: 0.88rem;
-  color: rgba(249, 245, 240, 0.65);
+  color: var(--mid);
   line-height: 1.7;
 }
 
+.why-card:hover .why-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--blush);
+  color: var(--deep);
+}
 
-/* ============================================
-   INDEX — TESTIMONIALS
-   ============================================ */
+/* =========================================================
+   HOME - TESTIMONIALS
+   ========================================================= */
+
 #testimonials {
   background: var(--light);
   text-align: center;
+  position: relative;
 }
 
 .testi-grid {
@@ -588,40 +801,56 @@ section {
 
 .testi-card {
   background: var(--white);
-  padding: 2rem 1.8rem;
+  padding: 35px 30px;
   text-align: left;
+  position: relative;
+  border: 1px solid rgba(201, 168, 154, 0.35);
+  border-radius: 4px;
+  transition: all 0.4s ease;
 }
 
 .stars {
   color: var(--rose);
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
 }
 
 .testi-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
   font-style: italic;
   color: var(--deep);
-  line-height: 1.7;
+  line-height: 1.6;
   margin-bottom: 1.2rem;
 }
 
 .testi-author {
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--mid);
+  display: block;
+  margin-top: 22px;
 }
 
+.testi-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(44, 32, 24, 0.10);
+}
 
-/* ============================================
-   INDEX — NEWSLETTER
-   ============================================ */
+/* =========================================================
+   HOME - NEWSLETTER
+   ========================================================= */
+
 #newsletter {
-  background: var(--blush);
+  background: var(--light);
   text-align: center;
-  padding: 4rem 5%;
+  padding: 80px 30px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--blush);
+  border-bottom: 1px solid var(--blush);
 }
 
 #newsletter .section-title {
@@ -630,48 +859,90 @@ section {
 
 .newsletter-sub {
   color: var(--mid);
-  margin: 0.8rem 0 2rem;
+  margin: 0 auto 28px;
   font-size: 0.95rem;
+  max-width: 550px;
+  line-height: 1.7;
 }
 
 .newsletter-form {
   display: flex;
-  max-width: 460px;
+  max-width: 520px;
   margin: 0 auto;
+  padding: 5px;
+  background: var(--white);
+  border: 1px solid var(--blush);
 }
 
 .newsletter-form input {
   flex: 1;
-  padding: 0.85rem 1.2rem;
-  border: 1px solid var(--mid);
+  padding: 14px 16px;
+  border: none;
   border-right: none;
-  font-family: 'DM Sans', sans-serif;
+  font-family: inherit;
   font-size: 0.9rem;
-  background: var(--white);
+  background: transparent;
   outline: none;
+  min-width: 0;
+  color: var(--deep);
 }
 
 .newsletter-form button {
   background: var(--deep);
-  color: var(--cream);
+  color: var(--white);
   border: none;
-  padding: 0.85rem 1.5rem;
-  font-family: 'DM Sans', sans-serif;
+  padding: 14px 25px;
+  font-family: inherit;
   font-size: 0.82rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .newsletter-form button:hover {
   background: var(--mid);
+  transform: translateY(-2px);
 }
 
+#newsletter::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(201, 168, 154, 0.35);
+  border-radius: 50%;
+  left: -140px;
+  top: -80px;
+}
 
-/* ============================================
-   INDEX — FOOTER
-   ============================================ */
+#newsletter::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(201, 168, 154, 0.25);
+  border-radius: 50%;
+  right: -80px;
+  bottom: -100px;
+}
+
+#newsletter .section-tag,
+#newsletter .section-title,
+#newsletter .newsletter-sub,
+#newsletter .newsletter-form {
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter-form input::placeholder {
+  color: #a08d80;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 footer {
   background: var(--deep);
   color: var(--cream);
@@ -687,7 +958,7 @@ footer {
 }
 
 .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 2.2rem;
   letter-spacing: 0.3em;
   color: var(--cream);
@@ -711,18 +982,20 @@ footer {
   width: 36px;
   height: 36px;
   border: 1px solid rgba(249, 245, 240, 0.25);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(249, 245, 240, 0.65);
+  color: var(--light);
   text-decoration: none;
   font-size: 0.85rem;
   transition: border-color 0.3s, color 0.3s;
 }
 
 .footer-socials a:hover {
+  background: var(--cream);
   border-color: var(--rose);
-  color: var(--rose);
+  color: #ffa908;
 }
 
 .footer-col h4 {
@@ -766,10 +1039,10 @@ footer {
   color: rgba(249, 245, 240, 0.4);
 }
 
+/* =========================================================
+   SHOP
+   ========================================================= */
 
-/* ============================================
-   SHOP PAGE
-   ============================================ */
 .filter-bar {
   padding: 1.5rem 5%;
   display: flex;
@@ -784,19 +1057,21 @@ footer {
   padding: 0.45rem 1.2rem;
   border: 1px solid var(--blush);
   background: transparent;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--mid);
+  color: var(--deep);
   cursor: pointer;
   transition: all 0.25s;
+  font-weight: 500;
+  border-color: var(--deep);
 }
 
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--deep);
-  color: var(--cream);
+  color: var(--white);
   border-color: var(--deep);
 }
 
@@ -808,20 +1083,20 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  
 }
 
 .product-card {
-  background: var(--white);
+  background: transparent;
   overflow: hidden;
-  /* border-radius: 15px; */
-  transition: all 0.4s ease
+  transition: transform 0.4s ease;
+  border: none;
 }
 
 .product-card:hover {
   background: #F5E6E8;
-  /* soft rose pink */
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(44, 32, 24, 0.10);
 }
 
 .product-img {
@@ -831,29 +1106,34 @@ footer {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background: var(--light);
+  border-radius: 4px;
 }
 
 .product-photo {
   width: 100%;
-  height: 100%;
+  height: 280px;
   object-fit: cover;
-  object-position: center;
+  
   display: block;
+  transition: transform 0.6s ease;
 }
 
 .product-img .badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 15px;
+  left: 15px;
   background: var(--deep);
-  color: var(--cream);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
+  color: var(--white);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
+  padding: 7px 12px;
+  z-index: 2;
+  font-weight: 500;
+  border-radius: 2px;
 }
 
-/* Product image colour themes */
 .p1 {
   background: #f0e6d3;
   color: #c9845a;
@@ -885,55 +1165,59 @@ footer {
 }
 
 .product-body {
-  padding: 1rem 1.2rem 1.4rem;
+  padding: 20px 5px;
 }
 
 .product-category {
   font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #cc8060;
-  margin-bottom: 0.3rem;
+  color: #ac4c23;;
+  margin-bottom: 5px;
 }
 
 .product-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
   font-weight: 400;
   color: var(--deep);
-  margin-bottom: 0.3rem;
+  margin-bottom: 8px;
 }
 
 .product-price {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--mid);
-  margin-bottom: 1rem;
+  color: var(--deep);
+  margin-bottom: 15px;
 }
 
 .add-btn {
   width: 100%;
-  padding: 0.7rem;
-  background: var(--deep);
-  color: var(--cream);
-  border: none;
-  font-family: 'DM Sans', sans-serif;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: 1px solid var(--deep);
+  font-family: "DM Sans", sans-serif;
   font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .add-btn:hover {
-  background: var(--mid);
+  background:var(--mid);
+  color: var(--white);
 }
 
 .add-btn.added {
-  background: var(--rose);
+  background: var(--mid);
 }
 
-/* Toast notification */
+.product-card:hover .product-photo {
+  transform: scale(1.05);
+}
+
 .toast {
   position: fixed;
   bottom: 2rem;
@@ -954,20 +1238,21 @@ footer {
   opacity: 1;
 }
 
+/* =========================================================
+   CART
+   ========================================================= */
 
-/* ============================================
-   CART PAGE
-   ============================================ */
 .cart-section {
   padding: 3rem 5%;
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: 3rem;
   align-items: start;
 }
 
 .cart-items {
   background: var(--white);
+  width: 100%;
 }
 
 .cart-item {
@@ -976,6 +1261,7 @@ footer {
   gap: 1.5rem;
   padding: 1.2rem 1.5rem;
   border-bottom: 1px solid var(--blush);
+  color: var(--deep);
 }
 
 .cart-item:last-child {
@@ -988,7 +1274,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 0.75rem;
   flex-shrink: 0;
   background: var(--light);
@@ -1002,7 +1288,7 @@ footer {
 }
 
 .item-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.15rem;
   color: var(--deep);
   margin-bottom: 0.2rem;
@@ -1091,21 +1377,38 @@ footer {
   text-transform: uppercase;
 }
 
-/* Order summary (cart & checkout share this) */
+.cart-section + * {
+  color: var(--deep);
+}
+
+.cart-item h3,
+.cart-item p,
+.cart-item span {
+  color: var(--deep);
+}
+
+/* =========================================================
+   ORDER SUMMARY
+   ========================================================= */
+
 .order-summary {
   background: var(--white);
   padding: 2rem;
-  position: relative;
-  top: 100px;
+  position: static;
+  top: auto;
+  width: 100%;
+  align-self: start;
+  box-sizing: border-box;
 }
 
 .order-summary h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--blush);
+  color: var(--deep);
 }
 
 .summary-row {
@@ -1133,7 +1436,7 @@ footer {
   background: var(--deep);
   color: var(--cream);
   border: none;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1141,6 +1444,7 @@ footer {
   text-decoration: none;
   text-align: center;
   transition: background 0.3s;
+  box-sizing: border-box;
 }
 
 .checkout-btn:hover {
@@ -1156,21 +1460,24 @@ footer {
   text-decoration: none;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: color 0.3s ease;
 }
 
 .continue-link:hover {
   color: var(--deep);
 }
 
+/* =========================================================
+   CHECKOUT
+   ========================================================= */
 
-/* ============================================
-   CHECKOUT PAGE
-   ============================================ */
 .steps {
   display: flex;
   padding: 1.5rem 5%;
   background: var(--white);
   border-bottom: 1px solid var(--blush);
+  justify-content: center;
+  align-items: center;
 }
 
 .step {
@@ -1180,16 +1487,16 @@ footer {
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #d36a0d;
-  ;
+  color: var(--mid);
 }
 
 .step.active {
   color: var(--deep);
+  font-weight: 500;
 }
 
 .step.done {
-  color: #d36a0d;
+  color: var(--rose);
 }
 
 .step-num {
@@ -1213,23 +1520,27 @@ footer {
 .checkout-section {
   padding: 3rem 5%;
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: 3rem;
   align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .checkout-form {
   background: var(--white);
-  padding: 2rem;
+  padding: 2.5rem;
+  border: 1px solid rgba(201, 168, 154, 0.35);
 }
 
 .form-section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.4rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid var(--blush);
+  color: var(--deep);
 }
 
 .form-row {
@@ -1248,8 +1559,9 @@ footer {
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--mid);
+  color: var(--deep);
   margin-bottom: 0.4rem;
+  font-weight: 500;
 }
 
 .form-group input,
@@ -1258,7 +1570,7 @@ footer {
   padding: 0.7rem 0.9rem;
   border: 1px solid var(--blush);
   background: var(--cream);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.9rem;
   color: var(--deep);
   outline: none;
@@ -1268,6 +1580,10 @@ footer {
 .form-group input:focus,
 .form-group select:focus {
   border-color: var(--rose);
+}
+
+.form-group input::placeholder {
+  color: #9b8b80;
 }
 
 .section-gap {
@@ -1287,7 +1603,7 @@ footer {
   padding: 0.7rem;
   border: 1px solid var(--blush);
   background: transparent;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.8rem;
   cursor: pointer;
   color: var(--mid);
@@ -1301,6 +1617,11 @@ footer {
   color: var(--cream);
 }
 
+.pay-option:hover {
+  border-color: var(--deep);
+  color: var(--deep);
+}
+
 .place-order-btn {
   display: block;
   width: 100%;
@@ -1308,20 +1629,20 @@ footer {
   background: var(--deep);
   color: var(--cream);
   border: none;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.88rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 1.5rem;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .place-order-btn:hover {
   background: var(--mid);
+  transform: translateY(-2px);
 }
 
-/* Checkout order summary overrides */
 .summary-item {
   display: flex;
   justify-content: space-between;
@@ -1339,12 +1660,26 @@ footer {
 .summary-total {
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: var(--deep);
+  font-family: serif;
 }
 
-/* Success popup */
+.checkout-section .order-summary {
+  position: static;
+  top: auto;
+  align-self: start;
+  width: 100%;
+  padding: 2rem;
+  background: var(--white);
+  border: 1px solid rgba(201, 168, 154, 0.35);
+}
+
+/* =========================================================
+   SUCCESS POPUP
+   ========================================================= */
+
 .success-overlay {
   display: none;
   position: fixed;
@@ -1368,18 +1703,6 @@ footer {
   animation: popIn 0.4s ease;
 }
 
-@keyframes popIn {
-  from {
-    transform: scale(0.85);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 .success-icon {
   font-size: 3rem;
   color: var(--rose);
@@ -1387,7 +1710,7 @@ footer {
 }
 
 .success-box h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 0.8rem;
@@ -1411,11 +1734,40 @@ footer {
   display: inline-block;
 }
 
+/* =========================================================
+   ANIMATION - FADEUP
+   ========================================================= */
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   ANIMATION - POPIN
+   ========================================================= */
+
+from {
+  transform: scale(0.85);
+  opacity: 0;
+}
+
+to {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
 @media (max-width: 900px) {
+
   #hero {
     flex-direction: column;
     text-align: center;
@@ -1452,55 +1804,29 @@ footer {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (max-width: 800px) {
 
-  .cart-section,
   .checkout-section {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .order-summary {
-    position: static;
-  }
-
-  .cart-item {
-    flex-wrap: wrap;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--cream);
     padding: 2rem 5%;
-    border-bottom: 1px solid var(--blush);
-    gap: 1.5rem;
-    box-shadow: 0 10px 15px rgba(44, 32, 24, 0.05);
   }
+
+  .checkout-form {
+    padding: 1.5rem;
+  }
+
+  .checkout-section .order-summary {
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 600px) {
 
-  .nav-links,
+
   .nav-btn {
     display: none;
   }
@@ -1525,8 +1851,259 @@ footer {
     text-align: center;
   }
 
-
   .products-grid {
     grid-template-columns: 1fr;
   }
+
+}
+
+@media (max-width: 768px) {
+
+  .about-text {
+    padding-left: 0;
+  }
+
+  .about-stats {
+    gap: 15px;
+  }
+
+  .stat-num {
+    font-size: 1.8rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .product-photo {
+    height: 360px;
+  }
+
+  .product-name {
+    font-size: 1.25rem;
+  }
+
+}
+@media (max-width: 768px) {
+
+  nav {
+    height: 75px;
+    padding: 0 5%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-top: 1px solid var(--blush);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: 15px;
+    flex-shrink: 0;
+  }
+}
+/* =========================
+   CART PAGE - RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .cart-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    padding: 2rem 5%;
+
+    overflow: hidden;
+  }
+
+  .cart-items {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .order-summary {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  /* Individual cart item */
+
+  .cart-item {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns: 75px minmax(0, 1fr) auto;
+
+    grid-template-rows: auto auto;
+
+    column-gap: 12px;
+    row-gap: 10px;
+
+    padding: 1rem 0;
+
+    overflow: hidden;
+  }
+
+
+  /* Product image */
+
+  .item-img {
+    width: 75px;
+    height: 100px;
+
+    object-fit: cover;
+
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    flex-shrink: 0;
+  }
+
+
+  /* Product information */
+
+  .item-info {
+    min-width: 0;
+    width: 100%;
+
+    grid-column: 2;
+    grid-row: 1;
+
+    overflow: hidden;
+  }
+
+  .item-info h3,
+  .item-info .product-name {
+    margin: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.4;
+
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+
+  /* Quantity buttons */
+
+  .item-controls {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    width: fit-content;
+    max-width: 100%;
+  }
+
+
+  .item-controls button {
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+  }
+
+
+  /* Item total */
+
+  .item-total {
+    grid-column: 3;
+    grid-row: 1;
+
+    white-space: nowrap;
+
+    font-size: 1rem;
+
+    align-self: start;
+  }
+
+
+  /* Remove button */
+
+  .remove-btn {
+    grid-column: 3;
+    grid-row: 2;
+
+    justify-self: end;
+    align-self: center;
+
+    flex-shrink: 0;
+  }
+
+}
+@media (max-width: 400px) {
+
+  .cart-section {
+    padding: 1.5rem 10px;
+  }
+
+  .cart-item {
+    grid-template-columns: 65px minmax(0, 1fr) auto;
+    column-gap: 9px;
+  }
+
+  .item-img {
+    width: 65px;
+    height: 90px;
+  }
+
+  .item-info h3,
+  .item-info .product-name {
+    font-size: 1rem;
+  }
+
+  .item-controls {
+    gap: 6px;
+  }
+
+  .item-controls button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .item-total {
+    font-size: 0.9rem;
+  }
+
 }
